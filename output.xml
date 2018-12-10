@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20181112 21:11:16.605" generator="Robot 3.0.4 (Python 2.7.15 on win32)">
+<suite source="C:\Users\donah\PycharmProjects\donahTest2\Test\TC_001_Open_Browser.robot" id="s1" name="TC 001 Open Browser">
+<test id="s1-t1" name="TC_001 Start Browser">
+<kw name="Open Login Page" library="MyResourceFile">
+<arguments>
+<arg>${URLSite}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URLSite}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20181112 21:11:16.767" level="INFO">Opening browser 'chrome' to base url 'https://bond.techstyle.net'.</msg>
+<status status="PASS" endtime="20181112 21:11:51.060" starttime="20181112 21:11:16.766"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until ``text`` appears on current page.</doc>
+<arguments>
+<arg>SIGN IN TO CONTINUE</arg>
+</arguments>
+<status status="PASS" endtime="20181112 21:11:55.433" starttime="20181112 21:11:51.060"></status>
+</kw>
+<status status="PASS" endtime="20181112 21:11:55.435" starttime="20181112 21:11:16.766"></status>
+</kw>
+<kw name="Input Username Password" library="MyResourceFile">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:username</arg>
+<arg>dcandia-c</arg>
+</arguments>
+<msg timestamp="20181112 21:11:55.435" level="INFO">Typing text 'dcandia-c' into text field 'id:username'.</msg>
+<status status="PASS" endtime="20181112 21:11:55.526" starttime="20181112 21:11:55.435"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:password</arg>
+<arg>DCw3lcome1</arg>
+</arguments>
+<msg timestamp="20181112 21:11:55.526" level="INFO">Typing text 'DCw3lcome1' into text field 'id:password'.</msg>
+<status status="PASS" endtime="20181112 21:11:55.608" starttime="20181112 21:11:55.526"></status>
+</kw>
+<status status="PASS" endtime="20181112 21:11:55.608" starttime="20181112 21:11:55.435"></status>
+</kw>
+<kw name="Click Login Button" library="MyResourceFile">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>XPATH://input[@type='submit']</arg>
+</arguments>
+<msg timestamp="20181112 21:11:55.610" level="INFO">Clicking button 'XPATH://input[@type='submit']'.</msg>
+<status status="PASS" endtime="20181112 21:11:56.883" starttime="20181112 21:11:55.610"></status>
+</kw>
+<status status="PASS" endtime="20181112 21:11:56.883" starttime="20181112 21:11:55.609"></status>
+</kw>
+<status status="PASS" endtime="20181112 21:11:56.884" critical="yes" starttime="20181112 21:11:16.765"></status>
+</test>
+<test id="s1-t2" name="TC_002 Search Bond">
+<kw name="Check Page Title" library="MyResourceFile">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://*[@id="memberSearchContainer"]/div[1]/div[2]/form/div/div[1]/input</arg>
+</arguments>
+<status status="PASS" endtime="20181112 21:11:57.790" starttime="20181112 21:11:56.887"></status>
+</kw>
+<status status="PASS" endtime="20181112 21:11:57.791" starttime="20181112 21:11:56.887"></status>
+</kw>
+<kw name="Input Search String" library="MyResourceFile">
+<arguments>
+<arg>${searchStr}</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="memberSearchContainer"]/div[1]/div[2]/form/div/div[1]/input</arg>
+<arg>${searchStr}</arg>
+</arguments>
+<msg timestamp="20181112 21:11:57.792" level="INFO">Typing text 'Donah Test' into text field 'xpath://*[@id="memberSearchContainer"]/div[1]/div[2]/form/div/div[1]/input'.</msg>
+<status status="PASS" endtime="20181112 21:11:57.959" starttime="20181112 21:11:57.792"></status>
+</kw>
+<status status="PASS" endtime="20181112 21:11:57.959" starttime="20181112 21:11:57.791"></status>
+</kw>
+<kw name="Click Fnc Button" library="MyResourceFile">
+<arguments>
+<arg>${btnName}</arg>
+<arg>${linkNum}</arg>
+</arguments>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${btnName} == 'phone'</arg>
+<arg>Click Button</arg>
+<arg>id:button_phone</arg>
+</arguments>
+<status status="PASS" endtime="20181112 21:11:57.961" starttime="20181112 21:11:57.960"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${btnName} == 'order'</arg>
+<arg>Click Button</arg>
+<arg>id:button_order</arg>
+</arguments>
+<status status="PASS" endtime="20181112 21:11:57.961" starttime="20181112 21:11:57.961"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${btnName} == 'customer'</arg>
+<arg>Click Button</arg>
+<arg>id:button_customer</arg>
+</arguments>
+<status status="PASS" endtime="20181112 21:11:57.961" starttime="20181112 21:11:57.961"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${btnName} == 'membership'</arg>
+<arg>Click Button</arg>
+<arg>id:button_membership</arg>
+</arguments>
+<status status="PASS" endtime="20181112 21:11:57.962" starttime="20181112 21:11:57.961"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${btnName} == 'rma'</arg>
+<arg>Click Button</arg>
+<arg>id:button_rma</arg>
+</arguments>
+<status status="PASS" endtime="20181112 21:11:57.962" starttime="20181112 21:11:57.962"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${btnName} == 'email'</arg>
+<arg>Click Button</arg>
+<arg>id:button_email</arg>
+</arguments>
+<status status="PASS" endtime="20181112 21:11:57.962" starttime="20181112 21:11:57.962"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${btnName} == 'name'</arg>
+<arg>Click Button</arg>
+<arg>id:button_name</arg>
+</arguments>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>id:button_name</arg>
+</arguments>
+<msg timestamp="20181112 21:11:57.963" level="INFO">Clicking button 'id:button_name'.</msg>
+<status status="PASS" endtime="20181112 21:11:58.038" starttime="20181112 21:11:57.963"></status>
+</kw>
+<status status="PASS" endtime="20181112 21:11:58.039" starttime="20181112 21:11:57.962"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${btnName} == 'other'</arg>
+<arg>Click LnkSearch Other</arg>
+<arg>${lnkNum}</arg>
+</arguments>
+<status status="PASS" endtime="20181112 21:11:58.039" starttime="20181112 21:11:58.039"></status>
+</kw>
+<status status="PASS" endtime="20181112 21:11:58.039" starttime="20181112 21:11:57.960"></status>
+</kw>
+<kw name="Click CID Link" library="MyResourceFile">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://*[@id="mainSearchRslts"]/tbody/tr</arg>
+</arguments>
+<status status="PASS" endtime="20181112 21:11:58.484" starttime="20181112 21:11:58.040"></status>
+</kw>
+<kw name="Get WebElement" library="Selenium2Library">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="mainSearchRslts"]/tbody/tr[1]/td[2]/a</arg>
+</arguments>
+<assign>
+<var>${element}</var>
+</assign>
+<msg timestamp="20181112 21:11:58.499" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="bfe78df1557da9c1903212e57a9259a1", element="0.3447959979729993-9")&gt;</msg>
+<status status="PASS" endtime="20181112 21:11:58.499" starttime="20181112 21:11:58.484"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20181112 21:11:58.499" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="bfe78df1557da9c1903212e57a9259a1", element="0.3447959979729993-9")&gt;'.</msg>
+<status status="PASS" endtime="20181112 21:11:58.698" starttime="20181112 21:11:58.499"></status>
+</kw>
+<status status="PASS" endtime="20181112 21:11:58.698" starttime="20181112 21:11:58.040"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<status status="PASS" endtime="20181112 21:11:58.699" starttime="20181112 21:11:58.699"></status>
+</kw>
+<kw name="Click Edit Link" library="MyResourceFile">
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>xpath://*[@id="copyText"]</arg>
+</arguments>
+<status status="PASS" endtime="20181112 21:12:00.751" starttime="20181112 21:11:58.700"></status>
+</kw>
+<kw name="Get WebElement" library="Selenium2Library">
+<doc>Returns the first WebElement matching the given ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="mainUIView"]/div[3]/div[1]/div/div/div[3]/a</arg>
+</arguments>
+<assign>
+<var>${element}</var>
+</assign>
+<msg timestamp="20181112 21:12:01.765" level="INFO">${element} = &lt;selenium.webdriver.remote.webelement.WebElement (session="bfe78df1557da9c1903212e57a9259a1", element="0.3447959979729993-11")&gt;</msg>
+<status status="PASS" endtime="20181112 21:12:01.765" starttime="20181112 21:12:00.751"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${element}</arg>
+</arguments>
+<msg timestamp="20181112 21:12:01.765" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="bfe78df1557da9c1903212e57a9259a1", element="0.3447959979729993-11")&gt;'.</msg>
+<status status="PASS" endtime="20181112 21:12:02.900" starttime="20181112 21:12:01.765"></status>
+</kw>
+<status status="PASS" endtime="20181112 21:12:02.900" starttime="20181112 21:11:58.699"></status>
+</kw>
+<kw name="Member Info Edit" library="MyResourceFile">
+<arguments>
+<arg>${fName}</arg>
+<arg>''</arg>
+<arg>''</arg>
+</arguments>
+<kw name="To String" library="MyKeywordLib">
+<arguments>
+<arg>${fName}</arg>
+</arguments>
+<msg timestamp="20181112 21:12:02.902" level="FAIL">TypeError: expected a string or other character buffer object</msg>
+<status status="FAIL" endtime="20181112 21:12:02.902" starttime="20181112 21:12:02.901"></status>
+</kw>
+<status status="FAIL" endtime="20181112 21:12:02.902" starttime="20181112 21:12:02.901"></status>
+</kw>
+<status status="FAIL" endtime="20181112 21:12:02.903" critical="yes" starttime="20181112 21:11:56.886">TypeError: expected a string or other character buffer object</status>
+</test>
+<status status="FAIL" endtime="20181112 21:12:02.908" starttime="20181112 21:11:16.608"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="1">Critical Tests</stat>
+<stat fail="1" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="TC 001 Open Browser" pass="1">TC 001 Open Browser</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
